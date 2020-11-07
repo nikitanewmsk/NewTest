@@ -44,6 +44,14 @@ namespace IO.Swagger.Controllers
         [SwaggerOperation("AddInventory")]
         public virtual IActionResult AddInventory([FromQuery][Required()]string sortOrder, [FromQuery]string searchString, [FromBody]InventoryItem inventoryItem)
         { 
+
+            var res = @"	
+                {	
+                    name: John,	
+                    age: 30	
+                }            	
+            ";
+
             //TODO: Uncomment the next line to return response 201 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(201);
 
@@ -53,6 +61,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 409 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(409);
 
+            return Ok(res);
 
             throw new NotImplementedException();
         }

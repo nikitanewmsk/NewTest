@@ -33,6 +33,7 @@ namespace IO.Swagger.Controllers
         /// </summary>
         /// <remarks>Adds an item to the system</remarks>
         /// <param name="searchString">pass an optional search string for looking up inventory</param>
+        /// <param name="sortOrder">sorting inventory</param>
         /// <param name="inventoryItem">Inventory item to add</param>
         /// <response code="201">item created</response>
         /// <response code="400">invalid input, object invalid</response>
@@ -41,7 +42,7 @@ namespace IO.Swagger.Controllers
         [Route("/nikitanewmsk/simple/1.0.0/inventory")]
         [ValidateModelState]
         [SwaggerOperation("AddInventory")]
-        public virtual IActionResult AddInventory([FromQuery]string searchString, [FromBody]InventoryItem inventoryItem)
+        public virtual IActionResult AddInventory([FromQuery]string searchString, [FromQuery]string sortOrder, [FromBody]InventoryItem inventoryItem)
         { 
             //TODO: Uncomment the next line to return response 201 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(201);

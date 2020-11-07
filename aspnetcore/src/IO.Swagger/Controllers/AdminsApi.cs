@@ -43,7 +43,7 @@ namespace IO.Swagger.Controllers
         public virtual IActionResult AddInventory([FromBody]InventoryItem inventoryItem)
         { 
             //TODO: Uncomment the next line to return response 201 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(201);
+            return StatusCode(201);
 
             //TODO: Uncomment the next line to return response 400 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(400);
@@ -52,7 +52,7 @@ namespace IO.Swagger.Controllers
             // return StatusCode(409);
 
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

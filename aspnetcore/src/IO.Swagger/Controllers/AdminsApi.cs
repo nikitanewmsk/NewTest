@@ -32,36 +32,23 @@ namespace IO.Swagger.Controllers
         /// adds an inventory item
         /// </summary>
         /// <remarks>Adds an item to the system</remarks>
-        /// <param name="sortOrder">sorting inventory</param>
         /// <param name="searchString">pass an optional search string for looking up inventory</param>
+        /// <param name="sortOrder">sorting inventory</param>
         /// <param name="inventoryItem">Inventory item to add</param>
         /// <response code="201">item created</response>
         /// <response code="400">invalid input, object invalid</response>
-        /// <response code="409">an existing item already exists</response>
         [HttpPost]
         [Route("/nikitanewmsk/simple/1.0.0/inventory")]
         [ValidateModelState]
         [SwaggerOperation("AddInventory")]
-        public virtual IActionResult AddInventory([FromQuery][Required()]string sortOrder, [FromQuery]string searchString, [FromBody]InventoryItem inventoryItem)
+        public virtual IActionResult AddInventory([FromQuery][Required()]string searchString, [FromQuery]string sortOrder, [FromBody]InventoryItem inventoryItem)
         { 
-
-            var res = @"	
-                {	
-                    name: John,	
-                    age: 30	
-                }            	
-            ";
-
             //TODO: Uncomment the next line to return response 201 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(201);
 
             //TODO: Uncomment the next line to return response 400 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(400);
 
-            //TODO: Uncomment the next line to return response 409 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(409);
-
-            return Ok(res);
 
             throw new NotImplementedException();
         }

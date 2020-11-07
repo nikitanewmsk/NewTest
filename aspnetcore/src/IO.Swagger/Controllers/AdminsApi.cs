@@ -16,6 +16,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using IO.Swagger.Attributes;
+
 using Microsoft.AspNetCore.Authorization;
 using IO.Swagger.Models;
 
@@ -43,16 +44,8 @@ namespace IO.Swagger.Controllers
         [SwaggerOperation("AddInventory")]
         public virtual IActionResult AddInventory([FromQuery][Required()]string sortOrder, [FromQuery]string searchString, [FromBody]InventoryItem inventoryItem)
         { 
-
-            var res = @"
-                {
-                    name: John,
-                    age: 30
-                }            
-            ";
-
             //TODO: Uncomment the next line to return response 201 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            //return StatusCode(201);
+            // return StatusCode(201);
 
             //TODO: Uncomment the next line to return response 400 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(400);
@@ -60,9 +53,8 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 409 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(409);
 
-            //throw new NotImplementedException();
 
-            return Ok(res);
+            throw new NotImplementedException();
         }
     }
 }
